@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <title>Oldagram</title>
 
-  <!-- Fonts from Google -->
+  <!-- fonts pulled from Google (kept simple, no build system here) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
 
@@ -16,32 +16,35 @@
 
   <div class="app">
 
-    <!-- Top navigation bar -->
+    <!-- top nav (logo + user controls) -->
     <nav>
       <div class="nav-logo-text">Oldagram</div>
 
+      <!-- right side controls (theme toggle + user avatar) -->
       <div class="nav-right">
-        <!-- Dark mode toggle switch -->
+
+        <!-- simple checkbox toggle for dark mode (JS handles behavior) -->
         <label class="theme-switch">
           <input type="checkbox" id="themeToggle">
           <span class="slider"></span>
         </label>
 
-        <!-- User avatar (static for now) -->
+        <!-- static user avatar for now -->
         <img src="images/user-avatar.png" alt="Your profile" class="nav-avatar">
       </div>
     </nav>
 
-    <!-- Stories section (rendered dynamically) -->
+    <!-- stories row (rendered dynamically, kept separate from feed for layout clarity) -->
     <div class="stories" id="stories"></div>
 
-    <!-- Main feed (posts injected via JavaScript) -->
+    <!-- main feed (JS injects posts here) -->
     <main id="feed"></main>
 
   </div>
 
-  <!-- Bottom navigation (static UI only) -->
+  <!-- bottom nav (mobile-style shortcuts, purely visual in this version) -->
   <div class="bottom-nav">
+
     <button class="nav-btn active">
       <img src="images/icon-home.png" alt="Home" class="nav-icon">
     </button>
@@ -61,6 +64,7 @@
     <button class="nav-btn">
       <img src="images/icon-profile.png" alt="Profile" class="nav-icon">
     </button>
+
   </div>
 
   <script src="index.js"></script>
